@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUVARNA JEWELLERY</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font for classic serif look -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Roboto:400,500" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-title">
+                <img src="images/Suvarna Jewellers_page-0001.jpg" alt="Suvarna Logo" class="logo">
+                <div class="title">
+                    <span class="brand">SUVARNA</span><br>
+                    <span class="brand">JEWELLERY</span>
+                </div>
+            </div>
+            <nav>
+    <a href="gold-schemes.html"  class="active">GOLD SCHEME</a>
+    <a href="#">CREDIT SCHEME</a>
+    <a href="#" class="login" id="loginNav">Login</a>
+  </nav>
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <div class="login-box">
+        <h2 class="welcome">Welcome Back!</h2>
+        <p class="subtitle">Log in to access your employee portal.</p>
+        <form id="loginForm">
+          <label for="employee_id">Employee ID</label>
+          <div class="input-group">
+            <input type="text" id="employee_id" placeholder="Enter your Employee ID" required>
+          </div>
+          <label for="password">Enter password</label>
+          <div class="input-group">
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <span class="input-eye" id="togglePassword">&#128065;</span>
+          </div>
+          <div class="forgot-row">
+            <a href="#" class="forgot">Forgot Password?</a>
+          </div>
+          <button class="login-btn" type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="forgotModal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="forgotClose">&times;</span>
+      <h2>Forgot Password</h2>
+      <form id="forgotForm">
+        <label for="forgotEmail">Enter your email to reset password:</label>
+        <input type="email" id="forgotEmail" required>
+        <button type="submit">Send OTP</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="otpModal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="otpClose">&times;</span>
+      <h2>Enter One-Time Password</h2>
+      <p>A 6-digit code has been sent to your email.</p>
+      <form id="otpForm">
+        <label for="otpInput">OTP Code</label>
+        <input type="text" id="otpInput" placeholder="e.g., 123456" maxlength="6" required>
+        <button type="submit">Confirm</button>
+      </form>
+      <a href="#" id="resendOtp">Resend Code</a>
+      <a href="#" id="otpGoBack">Go back</a>
+    </div>
+  </div>
+  <div class="modal" id="resetModal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="resetClose">&times;</span>
+      <h2>Reset Password</h2>
+      <form id="resetForm">
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" required>
+        <button type="submit">Set Password</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+        </header>
+        <main>
+            <div class="main-content">
+                <div class="promo-img">
+                    <img src="images/generated-image (1).png" alt="Jewellery Promotion" />
+                </div>
+                <div class="promo-text">
+                    <h2>Introducing SUVARNA Jewellery<br>Swarna Siddhi Advance Purchase Plan.</h2>
+                    <p class="desc">
+                        A golden opportunity to make your moments even more memorable. Invest in your dreams with our flexible and rewarding plan, designed to bring you closer to owning exquisite jewelry.
+                    </p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <span class="footer-logo">SUVARNA<span style="color: #a5282b;">Jewellery</span></span>
+                    <p>Your trusted partner for golden moments.</p>
+                    <div class="social">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111392.png" alt="Facebook" /></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111421.png" alt="Instagram" /></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Twitter" /></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111432.png" alt="LinkedIn" /></a>
+                    </div>
+                </div>
+                <div class="footer-columns">
+                    <div>
+                        <h4>Products</h4>
+                        <ul>
+                            <li>Gold Jewellery</li>
+                            <li>Diamond Jewellery</li>
+                            <li>Silver Articles</li>
+                            <li>Gemstones</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Services</h4>
+                        <ul>
+                            <li>Advance Purchase Plan</li>
+                            <li>Gold Exchange</li>
+                            <li>Custom Designs</li>
+                            <li>Jewellery Cleaning</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>About Us</h4>
+                        <ul>
+                            <li>Our Heritage</li>
+                            <li>Our Stores</li>
+                            <li>Customer Care</li>
+                            <li>Careers</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Legal</h4>
+                        <ul>
+                            <li>Privacy Policy</li>
+                            <li>Terms &amp; Conditions</li>
+                            <li>Refund Policy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-base">
+                <span>&copy; 2025 Suvarna Jewellery. All rights reserved.</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

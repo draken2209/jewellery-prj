@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swarna Gold Scheme </title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { margin: 0; font-family: 'Roboto', Arial, sans-serif; background: #f9f9f8; }
+    .dashboard { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: 220px; background: #fff; border-right: 1px solid #eee; padding-top: 24px;
+    }
+    .sidebar-logo { max-width: 160px; margin: 12px auto 24px auto; display: block; }
+    .sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar ul li { margin-bottom: 5px;}
+    .scheme-link {
+      display: block; padding: 13px 28px 13px 24px; font-size: 1.07em;
+      color: #921d1c; border-left: 4px solid transparent; background: none; text-decoration: none; transition: .16s;
+    }
+    .scheme-link.active, .scheme-link:hover {
+      background: #ffe0e2; color: #550a14; border-left: 4px solid #a5282b; font-weight: 600;
+    }
+    .sidebar-add {
+      display: block; padding: 13px 28px 13px 24px; color: #a5282b; cursor: pointer; margin-top: 14px; font-weight: 500;
+      background: #fff6f7; border-left: 4px solid #fff6f7; text-decoration: none;
+    }
+    main { flex-grow: 1; padding: 44px 48px 40px 48px; background: #fafbfb;}
+    .dashboard-actions {
+      display: flex; justify-content: flex-end; align-items: center;
+      margin-bottom: 22px; gap: 16px;
+    }
+    .dashboard-action-btn {
+      padding: 11px 25px; font-size: 1em; font-weight: 600;
+      border: none; border-radius: 7px;
+      background: #a5282b; color: #fff;
+      transition: background 0.13s;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    .dashboard-action-btn.secondary {
+      background: #fff; color: #a5282b; border: 2px solid #a5282b;
+    }
+    .dashboard-action-btn:not(.secondary):hover { background: #921d1c; }
+    .dashboard-action-btn.secondary:hover { background: #ffe0e2; }
+    .dashboard-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 18px; box-shadow:0 2px 8px #eee;
+      background: #fff; border-radius: 12px; overflow: hidden;
+    }
+    .dashboard-table th {
+      background: #921d1c; color: #fff; font-weight: 700; padding: 12px 10px; font-size: 1.07em;
+    }
+    .dashboard-table td {
+      padding: 11px 13px; text-align: center; border-bottom: 1px solid #f3e9e7;
+    }
+    .dashboard-table tr:last-child td { border-bottom: none; }
+    .benefits-section { margin-top: 40px; background: #fff; border-radius: 10px; box-shadow:0 2px 8px #eee; padding: 22px 20px;}
+    .benefits-section h4 { margin-top: 0; }
+    .dashboard-btn {
+      margin-top: 15px; padding: 13px 40px; background: #a5282b; color: #fff; border: none; border-radius: 7px;
+      cursor: pointer; font-size: 1.11em; font-weight: 600; transition: background 0.13s;
+    }
+    .dashboard-btn:hover { background: #921d1c; }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <img src="images/Suvarna Jewellers_page-0001.jpg" class="sidebar-logo" alt="Logo">
+      <ul>
+        <li><a href="about-scheme.html" class="scheme-link">About Scheme</a></li>
+        <li><a href="swarnascheme-5000.html" class="scheme-link active">SWARNA (2500)</a></li>
+        <li><a href="swarnascheme-10000.html" class="scheme-link">SWARNA (10,000)</a></li>
+        <li><a href="swarnascheme-20000.html" class="scheme-link">SWARNA (20,000)</a></li>
+        <li><a href="add-scheme.html" class="sidebar-add">+ ADD NEW SCHEME</a></li>
+      </ul>
+    </aside>
+    <main>
+      
+      </div>
+    </main>
+  </div>
+</body>
+</html>

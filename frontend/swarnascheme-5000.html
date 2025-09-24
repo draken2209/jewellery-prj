@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Scheme - Swarna Siddhi</title>
+  <style>
+    body { margin: 0; font-family: 'Roboto', Arial, sans-serif; background: #f9f9f8; }
+    .dashboard { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: 220px; background: #fff; border-right: 1px solid #eee; padding-top: 24px;
+    }
+    .sidebar-logo { max-width: 160px; margin: 12px auto 24px auto; display: block; }
+    .sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar ul li { margin-bottom: 5px;}
+    .scheme-link, .sidebar-add {
+      display: block; padding: 13px 28px 13px 24px; font-size: 1.07em;
+      color: #921d1c; text-decoration: none;
+      border-left: 4px solid transparent; background: none; transition: .16s;
+    }
+    .scheme-link.active, .scheme-link:hover, .sidebar-add.active {
+      background: #ffe0e2; color: #550a14; border-left: 4px solid #60191a; font-weight: 600;
+    }
+    main { flex-grow: 1; padding: 44px 48px 40px 48px; background: #fafbfb; }
+    .header-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 18px; gap: 12px;
+    }
+    .header-title {
+      font-size: 21px; font-weight: bold; color: #222; letter-spacing: 0.04em;
+    }
+    .header-actions {
+      display: flex; gap: 14px;
+    }
+    .action-btn {
+      background: #5e1c1b; color: #fff; font-weight: bold; border: none; border-radius: 7px;
+      padding: 12px 23px; font-size: 15px; cursor: pointer; transition: background .14s;
+    }
+    .action-btn:hover { background: #681413; }
+    .members-table-wrapper {
+      background: #fff; border-radius: 12px; box-shadow:0 2px 8px #eee;
+      margin-bottom: 18px; overflow-x: auto;
+    }
+    .dashboard-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .dashboard-table th {
+      background: #921d1c; color: #fff; font-weight: 700; padding: 12px 10px; font-size: 1.07em;
+    }
+    .dashboard-table td {
+      padding: 11px 13px; text-align: left; border-bottom: 1px solid #f3e9e7; background: #faf8f8;
+      color: #3c3c3c;
+    }
+    .dashboard-table tr:last-child td { border-bottom: none; }
+
+    .modal { display:none; position:fixed; z-index:100; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.18);}
+    .modal-content {background: #fff; margin:4% auto; border-radius:8px; padding:26px 34px; box-shadow: 0 2px 24px #5e1c1b33; max-width:400px;}
+    .modal-close {float:right; font-size:1.3em; font-weight:700; color: #a94442; cursor:pointer;}
+    .show { display:block; }
+    .red-btn {background: #5e1c1b; color: #fff; border:none; border-radius:7px; padding:13px 38px; font-weight:600; font-size:1em; cursor:pointer; margin-top:19px;}
+    .form-label { font-weight:500; margin-top:15px; margin-bottom:4px; display:block;}
+    .form-input, .form-select, .form-date { width:100%; padding:8px 10px; border:1px solid #dfdfdf; border-radius:4px; background:#faf9fa; margin-bottom:7px; font-size:1em;}
+    .member-info-card {background:#fff; border-radius:9px; box-shadow:0 2px 10px #eee; padding:24px 20px; max-width:350px; margin:40px auto;}
+    .member-info-label {font-weight:500;}
+    .member-info-row {margin-top:11px; font-size:1.08em;}
+    @media (max-width: 900px) {
+      main { padding: 20px 6px;}
+      .sidebar { width: 100%; }
+      .dashboard-table th, .dashboard-table td { font-size: 14px; }
+      .header-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .header-actions { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <!-- Use your preferred logo here -->
+      <img src="images/Suvarna Jewellers_page-0001.jpg" class="sidebar-logo" alt="Logo">
+      <ul>
+        <li><a href="#" class="scheme-link active">About Scheme</a></li>
+        <li><a href="#" class="scheme-link">SWARNA (2,500)</a></li>
+        <li><a href="#" class="scheme-link">SWARNA (10,000)</a></li>
+        <li><a href="#" class="scheme-link">SWARNA (20,000)</a></li>
+        <li><a href="#" class="sidebar-add">+ ADD NEW SCHEME</a></li>
+      </ul>
+    </aside>
+    <main>
+      <div class="header-row">
+        <div class="header-title">SWARNA SIDDHI WEIGHT ACCUMULATION (2500)</div>
+        <div class="header-actions">
+          <button class="action-btn" id="btnRegister">New Registration</button>
+          <button class="action-btn">Add New Payment</button>
+        </div>
+      </div>
+      <div class="members-table-wrapper">
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Member Id</th>
+              <th>Date of Pay</th>
+              <th>Name</th>
+              <th>Phone number</th>
+              <th>Scheme(₹)</th>
+              <th>Amount(₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>M001</td><td>09-02-2025</td><td>Kiran</td><td>9117193627</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M002</td><td>03-01-2025</td><td>Shravan</td><td>9482839855</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M003</td><td>01-01-2025</td><td>Vedha</td><td>9233736585</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M004</td><td>29-01-2025</td><td>Teddy</td><td>9142416902</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M005</td><td>04-01-2025</td><td>Akash</td><td>9740341823</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M006</td><td>15-01-2025</td><td>Pavan</td><td>9318273645</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M007</td><td>25-01-2025</td><td>Samridhi</td><td>9837462519</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M008</td><td>10-02-2025</td><td>Sathwika</td><td>9571827364</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M009</td><td>12-01-2025</td><td>Laxmi</td><td>9128374650</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M010</td><td>20-02-2025</td><td>Shekar</td><td>9346571823</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M011</td><td>05-02-2025</td><td>Padmavathi</td><td>9982736451</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M012</td><td>18-01-2025</td><td>Akhila</td><td>9451827364</td><td>₹2500</td><td>2500</td></tr>
+            <tr><td>M013</td><td>22-01-2025</td><td>Kanna</td><td>9871236450</td><td>₹2500</td><td>2500</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Registration Modal -->
+      <div class="modal" id="registrationModal">
+        <div class="modal-content">
+          <span class="modal-close" id="closeModal">&times;</span>
+          <h4>Member Registration</h4>
+          <form id="registerForm">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-input" name="name" required>
+            <label class="form-label">Mobile Number</label>
+            <input type="tel" class="form-input" name="mobile" required maxlength="10">
+            <label class="form-label">Scheme</label>
+            <select name="scheme" class="form-select" required>
+              <option value="2500">Swarna (2,500)</option>
+              <option value="5000">Swarna (5,000)</option>
+              <option value="10000">Swarna (10,000)</option>
+            </select>
+            <label class="form-label">Date of Registration</label>
+            <input type="date" class="form-date" name="date" required>
+            <button class="red-btn" type="submit">Register Member</button>
+          </form>
+        </div>
+      </div>
+      <!-- Member Info Modal -->
+      <div class="modal" id="memberInfoModal">
+        <div class="modal-content member-info-card" id="memberInfoContent"></div>
+      </div>
+    </main>
+  </div>
+  <script>
+    // Show Registration Modal
+    document.getElementById('btnRegister').onclick = function() {
+      document.getElementById('registrationModal').classList.add('show');
+    };
+    document.getElementById('closeModal').onclick = function() {
+      document.getElementById('registrationModal').classList.remove('show');
+    };
+    // Submit Registration Form
+    document.getElementById('registerForm').onsubmit = function(e){
+      e.preventDefault();
+      let form = e.target;
+      let name = form.name.value.trim();
+      let mobile = form.mobile.value.trim();
+      let scheme = form.scheme.value;
+      let date = form.date.value;
+      // Generate fake Member ID, use DB value in production
+      let memberId = "MEM-2024-" + Math.floor(Math.random()*100) + "-A";
+      // Show member card
+      document.getElementById('memberInfoContent').innerHTML = `
+        <h3>Member Details</h3>
+        <div style="color:#555;font-size:1em;">Review the registered member's information below.</div>
+        <div class="member-info-row"><span class="member-info-label">Name:&nbsp;</span>${name}</div>
+        <div class="member-info-row"><span class="member-info-label">Mobile Number:&nbsp;</span>${mobile}</div>
+        <div class="member-info-row"><span class="member-info-label">Member ID:&nbsp;</span>${memberId}</div>
+        <button class="red-btn" onclick="document.getElementById('memberInfoModal').classList.remove('show')">submit</button>
+      `;
+      document.getElementById('registrationModal').classList.remove('show');
+      document.getElementById('memberInfoModal').classList.add('show');
+    };
+    // Close info modal
+    document.getElementById('memberInfoModal').onclick = function(e){
+      if(e.target === this) this.classList.remove('show');
+    };
+  </script>
+</body>
+</html>
+
+
+
